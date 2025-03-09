@@ -8,7 +8,16 @@ export default defineConfig({
     open: true
   },
   build: {
-    outDir: 'dist',
-    sourcemap: true
+    outDir: 'dist', // ✅ Ensure this is set correctly
+    sourcemap: true,
+    target: 'esnext', // Optimize for modern browsers
+    rollupOptions: {
+      output: {
+        manualChunks: undefined, // Reduce file splitting issues
+      },
+    },
+  },
+  define: {
+    'process.env': {} // Prevent issues with process.env usage in client code
   }
 });
