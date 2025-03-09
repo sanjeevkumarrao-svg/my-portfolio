@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom cursor styles */
+* {
+  cursor: none;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: theme('colors.primary');
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease;
+}
+
+.custom-cursor-follower {
+  width: 40px;
+  height: 40px;
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for interactive elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+  transform: scale(1.5);
+}
+
+/* Hide default cursor on interactive elements */
+a, button, input, textarea {
+  cursor: none;
+}
+
+/* Responsive cursor */
+@media (max-width: 768px) {
+  * {
+    cursor: auto;
+  }
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none;
+  }
+}
+
+/* Animated backgrounds */
+.bg-gradient-animated {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.bg-grid {
+  background-color: #0c0c0c;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: gridMove 20s linear infinite;
+}
+
+.bg-dots {
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.2) 2%, transparent 2.5%),
+    radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.2) 2%, transparent 2.5%);
+  background-size: 40px 40px;
+  animation: dotsFloat 20s linear infinite;
+}
+
+.bg-waves {
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.1) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(59, 130, 246, 0.1) 50%, 
+    rgba(59, 130, 246, 0.1) 75%, 
+    transparent 75%, 
+    transparent);
+  background-size: 40px 40px;
+  animation: waveMove 3s linear infinite;
+}
+
+.bg-circuit {
+  background-color: #000;
+  background-image: 
+    radial-gradient(rgba(59, 130, 246, 0.2) 2px, transparent 2px),
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+  animation: circuitPulse 4s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+@keyframes dotsFloat {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+@keyframes waveMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+@keyframes circuitPulse {
+  0% { 
+    background-size: 20px 20px;
+    opacity: 0.8;
+  }
+  50% { 
+    background-size: 25px 25px;
+    opacity: 1;
+  }
+  100% { 
+    background-size: 20px 20px;
+    opacity: 0.8;
+  }
+}
