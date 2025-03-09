@@ -11,9 +11,7 @@ export const education: Education[] = [
       'Specialized in Computer Science & Engineering',
       'Maintained a CGPA of 7.12/10.0'
     ],
-    achievements: [
-      'Best Final Year Project Award'
-    ]
+    achievements: ['Best Final Year Project Award']
   },
   {
     degree: 'Full Stack Web Development Certification',

@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Hero } from './components/Hero';
 import { Navbar } from './components/Navbar';
 import { CustomCursor } from './components/CustomCursor';
-import { ThemeToggle } from './components/ThemeToggle';
+// import { ThemeToggle } from './components/ThemeToggle';
 import { Chatbot } from './components/Chatbot';
 import { ContactForm } from './components/ContactForm';
 import { useThemeStore } from './store/themeStore';
@@ -59,7 +58,7 @@ function App() {
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
+                      {project.technologies.map((tech: string) => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
@@ -108,7 +107,7 @@ function App() {
                     </p>
                   </div>
                   <ul className="list-disc list-inside mb-4 space-y-2">
-                    {edu.description.map((item, i) => (
+                    {edu.description.map((item: string, i: number) => (
                       <li key={i} className="text-gray-600 dark:text-gray-300">{item}</li>
                     ))}
                   </ul>
@@ -116,7 +115,7 @@ function App() {
                     <div className="mt-4">
                       <h4 className="font-semibold mb-2">Achievements</h4>
                       <ul className="list-disc list-inside space-y-1">
-                        {edu.achievements.map((achievement, i) => (
+                        {edu.achievements.map((achievement: string, i: number) => (
                           <li key={i} className="text-gray-600 dark:text-gray-300">{achievement}</li>
                         ))}
                       </ul>
@@ -151,12 +150,12 @@ function App() {
                     {exp.period}
                   </p>
                   <ul className="list-disc list-inside mb-4 space-y-2">
-                    {exp.description.map((item, i) => (
+                    {exp.description.map((item: string, i: number) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
+                    {exp.technologies.map((tech: string) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"

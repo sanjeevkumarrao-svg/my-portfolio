@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Moon, Sun, Zap } from 'lucide-react';
+import { Moon, Sun, Zap } from 'lucide-react';
 import { useThemeStore } from '../store/themeStore';
 import { Theme } from '../types';
 
